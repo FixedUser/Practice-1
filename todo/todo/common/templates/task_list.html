@@ -1,0 +1,22 @@
+{% block content %}
+<div class="container">
+<h2>Tasks</h2>
+<a href="{% url 'task_create' %}"><h3>Create new task</h3></a>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Title</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+{% for task in tasks %}
+<tr>
+<td>{{ task.title }}</td>
+<td>{{ task.priority }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}
